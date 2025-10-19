@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>HBS MS/MBA Engineering Sciences Class of 2027</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <script src="https://unpkg.com/lucide@latest"></script>
+        <style>
+            body {
+                font-family: "Inter", sans-serif;
+            }
+            .bg-crimson {
+                background-color: #a51c30;
+            }
+            .text-crimson {
+                color: #a51c30;
+            }
+            .border-crimson {
+                border-color: #a51c30;
+            }
+            .hover-bg-crimson-dark:hover {
+                background-color: #841626;
+            }
+            .group:hover .group-hover\:text-crimson {
+                color: #a51c30;
+            }
+            .group:hover .group-hover\:translate-x-1 {
+                transform: translateX(0.25rem);
+            }
+            [x-cloak] {
+                display: none !important;
+            }
+        </style>
+    </head>
+    <body class="bg-gray-50 text-gray-800">
+        <!-- Header & Navigation -->
+        <header class="bg-white shadow-sm sticky top-0 z-50">
+            <nav
+                class="container mx-auto px-6 py-4 flex justify-between items-center"
+            >
+                <div class="flex items-center space-x-4">
+                    <svg
+                        class="h-10 w-10 text-crimson"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M12 2L2 7V9H3V17H21V9H22V7L12 2ZM19 15H17V11H15V15H13V9H14.4L12 7.5L9.6 9H11V15H9V11H7V15H5V8.6L12 4.4L19 8.6V15Z"
+                            fill="currentColor"
+                        />
+                        <path d="M7 17H17V19H7V17Z" fill="currentColor" />
+                    </svg>
+                    <h1 class="text-xl md:text-2xl font-bold text-gray-800">
+                        <span class="hidden sm:inline">HBS</span> MS/MBA Eng.
+                        Sci. '27
+                    </h1>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a
+                        href="#home"
+                        class="text-gray-600 hover:text-crimson transition duration-300"
+                        >Home</a
+                    >
+                    <a
+                        href="#profiles"
+                        class="text-gray-600 hover:text-crimson transition duration-300"
+                        >Class Profiles</a
+                    >
+                    <a
+                        href="#store"
+                        class="text-gray-600 hover:text-crimson transition duration-300"
+                        >Swag Store</a
+                    >
+                </div>
+                <div class="md:hidden" x-data="{ open: false }">
+                    <button
+                        @click="open = !open"
+                        class="text-gray-600 focus:outline-none"
+                    >
+                        <svg
+                            class="h-6 w-6"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M4 6h16M4 12h16m-7 6h7"
+                            ></path>
+                        </svg>
+                    </button>
+                    <div
+                        x-show="open"
+                        @click.away="open = false"
+                        class="absolute top-16 right-4 bg-white rounded-lg shadow-xl p-4 z-50"
+                    >
+                        <a
+                            href="#home"
+                            @click="open = false"
+                            class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md"
+                            >Home</a
+                        >
+                        <a
+                            href="#profiles"
+                            @click="open = false"
+                            class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md"
+                            >Profiles</a
+                        >
+                        <a
+                            href="#store"
+                            @click="open = false"
+                            class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md"
+                            >Store</a
+                        >
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main x-data="appData()">
+            <!-- Hero Section -->
+            <section id="home" class="relative bg-white">
+                <div class="absolute inset-0">
+                    <img
+                        class="w-full h-full object-cover opacity-10"
+                        src="https://images.unsplash.com/photo-1579546929518-9e396f3cc809?q=80&w=2070&auto=format&fit=crop"
+                        alt="Abstract Background"
+                    />
+                </div>
+                <div
+                    class="relative container mx-auto px-6 py-24 md:py-32 text-center"
+                >
+                    <h2
+                        class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight"
+                    >
+                        Harvard Business School
+                    </h2>
+                    <p
+                        class="mt-4 text-2xl md:text-3xl font-semibold text-crimson"
+                    >
+                        MS/MBA in Engineering Sciences — Class of 2027
+                    </p>
+                    <p class="mt-6 max-w-3xl mx-auto text-lg text-gray-600">
+                        Welcome to the digital hub for the inaugural class of
+                        innovators, leaders, and builders. Explore our profiles
+                        and grab some exclusive class swag.
+                    </p>
+                    <div class="mt-10">
+                        <a
+                            href="#profiles"
+                            class="bg-crimson text-white font-bold py-3 px-8 rounded-lg shadow-lg hover-bg-crimson-dark transition duration-300 ease-in-out transform hover:scale-105"
+                        >
+                            Meet the Class
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Class Profiles Section -->
+            <section id="profiles" class="py-20 bg-gray-50">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-16">
+                        <h3 class="text-4xl font-bold text-gray-900">
+                            Class of 2027 Profiles
+                        </h3>
+                        <p class="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
+                            Get to know the brilliant minds shaping the future
+                            of business and technology.
+                        </p>
+                    </div>
+                    <div
+                        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
+                    >
+                        <template x-for="profile in profiles" :key="profile.id">
+                            <div
+                                class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 group"
+                            >
+                                <div class="relative">
+                                    <img
+                                        class="w-full h-64 object-cover"
+                                        :src="profile.image"
+                                        :alt="profile.name"
+                                    />
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-70"
+                                    ></div>
+                                    <h4
+                                        class="absolute bottom-4 left-4 text-white text-2xl font-bold"
+                                        x-text="profile.name"
+                                    ></h4>
+                                </div>
+                                <div class="p-6">
+                                    <p
+                                        class="text-crimson font-semibold"
+                                        x-text="profile.undergrad"
+                                    ></p>
+                                    <p
+                                        class="mt-4 text-gray-600 text-sm"
+                                        x-text="profile.bio"
+                                    ></p>
+                                    <div class="mt-4 flex space-x-4">
+                                        <a
+                                            :href="profile.linkedin"
+                                            target="_blank"
+                                            class="text-gray-400 hover:text-blue-600 transition duration-300"
+                                        >
+                                            <i
+                                                data-lucide="linkedin"
+                                                class="w-5 h-5"
+                                            ></i>
+                                        </a>
+                                        <a
+                                            :href="'mailto:' + profile.email"
+                                            class="text-gray-400 hover:text-gray-800 transition duration-300"
+                                        >
+                                            <i
+                                                data-lucide="mail"
+                                                class="w-5 h-5"
+                                            ></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Swag Store Section -->
+            <section id="store" class="py-20 bg-white">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-16">
+                        <h3 class="text-4xl font-bold text-gray-900">
+                            Class of 2027 Swag Store
+                        </h3>
+                        <p class="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
+                            Show your pride with our exclusive MS/MBA
+                            Engineering Sciences apparel and accessories.
+                        </p>
+                    </div>
+
+                    <div class="flex justify-end mb-8 relative">
+                        <button
+                            @click="cartOpen = !cartOpen"
+                            class="relative flex items-center space-x-2 bg-gray-100 px-4 py-2 rounded-lg hover:bg-gray-200 transition"
+                        >
+                            <i
+                                data-lucide="shopping-cart"
+                                class="text-gray-700"
+                            ></i>
+                            <span class="text-gray-800 font-medium">Cart</span>
+                            <span
+                                class="absolute -top-2 -right-2 bg-crimson text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center"
+                                x-text="cart.length"
+                            ></span>
+                        </button>
+                        <!-- Cart Dropdown -->
+                        <div
+                            x-show="cartOpen"
+                            @click.away="cartOpen = false"
+                            x-cloak
+                            class="absolute top-full right-0 mt-2 w-80 bg-white rounded-lg shadow-xl z-40"
+                        >
+                            <div class="p-4 border-b">
+                                <h5 class="font-bold text-lg">Your Cart</h5>
+                            </div>
+                            <div class="p-4 max-h-64 overflow-y-auto">
+                                <template x-if="cart.length === 0">
+                                    <p class="text-gray-500 text-center">
+                                        Your cart is empty.
+                                    </p>
+                                </template>
+                                <template x-for="item in cart" :key="item.id">
+                                    <div
+                                        class="flex items-center justify-between py-2 border-b last:border-b-0"
+                                    >
+                                        <div>
+                                            <p
+                                                class="font-semibold"
+                                                x-text="item.name"
+                                            ></p>
+                                            <p
+                                                class="text-sm text-gray-500"
+                                                x-text="`$${item.price.toFixed(2)}`"
+                                            ></p>
+                                        </div>
+                                        <button
+                                            @click="removeFromCart(item.id)"
+                                            class="text-red-500 hover:text-red-700"
+                                        >
+                                            <i
+                                                data-lucide="trash-2"
+                                                class="w-4 h-4"
+                                            ></i>
+                                        </button>
+                                    </div>
+                                </template>
+                            </div>
+                            <div class="p-4 bg-gray-50 rounded-b-lg">
+                                <div
+                                    class="flex justify-between items-center font-bold text-lg"
+                                >
+                                    <span>Total:</span>
+                                    <span
+                                        x-text="`$${totalPrice.toFixed(2)}`"
+                                    ></span>
+                                </div>
+                                <button
+                                    class="w-full mt-4 bg-crimson text-white font-bold py-2 rounded-lg hover-bg-crimson-dark transition duration-300"
+                                    :class="{ 'opacity-50 cursor-not-allowed': cart.length === 0 }"
+                                    :disabled="cart.length === 0"
+                                >
+                                    Checkout
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                    >
+                        <template x-for="item in storeItems" :key="item.id">
+                            <div
+                                class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200"
+                            >
+                                <div class="bg-gray-100 p-8">
+                                    <img
+                                        :src="item.image"
+                                        :alt="item.name"
+                                        class="w-full h-64 object-contain"
+                                    />
+                                </div>
+                                <div class="p-6">
+                                    <h4
+                                        class="text-2xl font-bold text-gray-800"
+                                        x-text="item.name"
+                                    ></h4>
+                                    <p
+                                        class="mt-2 text-gray-600"
+                                        x-text="item.description"
+                                    ></p>
+                                    <div
+                                        class="mt-4 flex justify-between items-center"
+                                    >
+                                        <span
+                                            class="text-2xl font-bold text-crimson"
+                                            x-text="`$${item.price.toFixed(2)}`"
+                                        ></span>
+                                        <button
+                                            @click="addToCart(item)"
+                                            class="bg-gray-800 text-white font-semibold py-2 px-4 rounded-lg hover:bg-gray-900 transition duration-300 flex items-center space-x-2"
+                                        >
+                                            <i
+                                                data-lucide="plus"
+                                                class="w-5 h-5"
+                                            ></i>
+                                            <span>Add to Cart</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Message Toast -->
+            <div
+                x-show="toast.show"
+                x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="opacity-0 transform translate-y-2"
+                x-transition:enter-end="opacity-100 transform translate-y-0"
+                x-transition:leave="transition ease-in duration-300"
+                x-transition:leave-start="opacity-100 transform translate-y-0"
+                x-transition:leave-end="opacity-0 transform translate-y-2"
+                class="fixed bottom-5 right-5 bg-gray-900 text-white py-3 px-6 rounded-lg shadow-lg flex items-center space-x-3 z-50"
+                x-cloak
+            >
+                <i data-lucide="check-circle" class="text-green-400"></i>
+                <span x-text="toast.message"></span>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-white">
+            <div class="container mx-auto px-6 py-12">
+                <div
+                    class="flex flex-col md:flex-row justify-between items-center"
+                >
+                    <div class="text-center md:text-left mb-6 md:mb-0">
+                        <h5 class="text-xl font-bold">
+                            HBS MS/MBA Engineering Sciences
+                        </h5>
+                        <p class="text-gray-400">Class of 2027</p>
+                    </div>
+                    <div class="flex space-x-6">
+                        <a
+                            href="#profiles"
+                            class="text-gray-400 hover:text-white transition duration-300"
+                            >Profiles</a
+                        >
+                        <a
+                            href="#store"
+                            class="text-gray-400 hover:text-white transition duration-300"
+                            >Store</a
+                        >
+                        <a
+                            href="#"
+                            class="text-gray-400 hover:text-white transition duration-300"
+                            >Contact</a
+                        >
+                    </div>
+                </div>
+                <div
+                    class="mt-8 border-t border-gray-700 pt-6 text-center text-gray-500 text-sm"
+                >
+                    <p>
+                        &copy; 2025 Harvard Business School. All Rights
+                        Reserved. This is a conceptual project.
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+            defer
+        ></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                lucide.createIcons();
+            });
+
+            function appData() {
+                return {
+                    profiles: [
+                        {
+                            id: 1,
+                            name: "Alex Chen",
+                            undergrad: "MIT, B.S. Computer Science",
+                            bio: "Passionate about building scalable AI systems and exploring the intersection of technology and social impact. Previously worked at a fintech startup.",
+                            image: "https://placehold.co/400x400/313131/FFFFFF?text=AC",
+                            linkedin: "#",
+                            email: "achen@mba2027.hbs.edu",
+                        },
+                        {
+                            id: 2,
+                            name: "Brenda Smith",
+                            undergrad: "Stanford, B.S. Bioengineering",
+                            bio: "Focused on developing novel medical devices and improving healthcare accessibility. Avid hiker and amateur photographer.",
+                            image: "https://placehold.co/400x400/545454/FFFFFF?text=BS",
+                            linkedin: "#",
+                            email: "bsmith@mba2027.hbs.edu",
+                        },
+                        {
+                            id: 3,
+                            name: "Charles Davis",
+                            undergrad: "Caltech, B.S. Mechanical Engineering",
+                            bio: "Experience in robotics and automation for manufacturing. Aims to lead operations in a high-growth hardware company.",
+                            image: "https://placehold.co/400x400/838383/FFFFFF?text=CD",
+                            linkedin: "#",
+                            email: "cdavis@mba2027.hbs.edu",
+                        },
+                        {
+                            id: 4,
+                            name: "Diana Rodriguez",
+                            undergrad: "Carnegie Mellon, B.S. ECE",
+                            bio: "Expert in embedded systems and IoT. Wants to create sustainable tech solutions for smart cities. Enjoys sailing and coding.",
+                            image: "https://placehold.co/400x400/A3A3A3/FFFFFF?text=DR",
+                            linkedin: "#",
+                            email: "drodriguez@mba2027.hbs.edu",
+                        },
+                        {
+                            id: 5,
+                            name: "Ethan Williams",
+                            undergrad: "UC Berkeley, B.S. Chemical Engineering",
+                            bio: "Specializes in renewable energy and battery technology. Hopes to accelerate the transition to a green economy.",
+                            image: "https://placehold.co/400x400/313131/FFFFFF?text=EW",
+                            linkedin: "#",
+                            email: "ewilliams@mba2027.hbs.edu",
+                        },
+                        {
+                            id: 6,
+                            name: "Fiona Garcia",
+                            undergrad: "Georgia Tech, B.S. Aerospace Eng.",
+                            bio: "Background in satellite systems and space exploration. Interested in the commercialization of space tech.",
+                            image: "https://placehold.co/400x400/545454/FFFFFF?text=FG",
+                            linkedin: "#",
+                            email: "fgarcia@mba2027.hbs.edu",
+                        },
+                        {
+                            id: 7,
+                            name: "George Kim",
+                            undergrad: "U of Illinois, B.S. Materials Science",
+                            bio: "Researching next-generation semiconductors and their applications in consumer electronics. A foodie and travel enthusiast.",
+                            image: "https://placehold.co/400x400/838383/FFFFFF?text=GK",
+                            linkedin: "#",
+                            email: "gkim@mba2027.hbs.edu",
+                        },
+                        {
+                            id: 8,
+                            name: "Hannah Lee",
+                            undergrad: "Cornell, B.S. Civil Engineering",
+                            bio: "Focus on sustainable infrastructure and project management. Aims to build resilient communities.",
+                            image: "https://placehold.co/400x400/A3A3A3/FFFFFF?text=HL",
+                            linkedin: "#",
+                            email: "hlee@mba2027.hbs.edu",
+                        },
+                    ],
+                    storeItems: [
+                        {
+                            id: 1,
+                            name: "MS/MBA Class Hoodie",
+                            description:
+                                "Cozy and durable, perfect for those late-night study sessions.",
+                            price: 55.0,
+                            image: "https://placehold.co/600x400/e2e8f0/334155?text=Hoodie",
+                        },
+                        {
+                            id: 2,
+                            name: "Engineering Sciences Tee",
+                            description:
+                                "A classic, comfortable tee with the program logo.",
+                            price: 25.0,
+                            image: "https://placehold.co/600x400/e2e8f0/334155?text=T-Shirt",
+                        },
+                        {
+                            id: 3,
+                            name: "Class of 2027 Mug",
+                            description:
+                                "Start your morning with a reminder of your cohort.",
+                            price: 15.0,
+                            image: "https://placehold.co/600x400/e2e8f0/334155?text=Mug",
+                        },
+                        {
+                            id: 4,
+                            name: "HBS Tech Cap",
+                            description:
+                                "Stylish cap to wear around campus or in the lab.",
+                            price: 28.0,
+                            image: "https://placehold.co/600x400/e2e8f0/334155?text=Cap",
+                        },
+                        {
+                            id: 5,
+                            name: "Branded Water Bottle",
+                            description:
+                                "Stay hydrated with this sleek, insulated water bottle.",
+                            price: 32.0,
+                            image: "https://placehold.co/600x400/e2e8f0/334155?text=Bottle",
+                        },
+                        {
+                            id: 6,
+                            name: "Program Decal Sticker",
+                            description:
+                                "Show your pride on your laptop, notebook, or car.",
+                            price: 5.0,
+                            image: "https://placehold.co/600x400/e2e8f0/334155?text=Sticker",
+                        },
+                    ],
+                    cart: [],
+                    cartOpen: false,
+                    toast: {
+                        show: false,
+                        message: "",
+                        timer: null,
+                    },
+                    addToCart(item) {
+                        this.cart.push(item);
+                        this.showToast(`'${item.name}' added to cart!`);
+                    },
+                    removeFromCart(itemId) {
+                        const index = this.cart.findIndex(
+                            (i) => i.id === itemId,
+                        );
+                        if (index > -1) {
+                            this.cart.splice(index, 1);
+                        }
+                    },
+                    get totalPrice() {
+                        return this.cart.reduce(
+                            (total, item) => total + item.price,
+                            0,
+                        );
+                    },
+                    showToast(message) {
+                        if (this.toast.timer) {
+                            clearTimeout(this.toast.timer);
+                        }
+                        this.toast.message = message;
+                        this.toast.show = true;
+                        this.toast.timer = setTimeout(() => {
+                            this.toast.show = false;
+                        }, 3000);
+                    },
+                };
+            }
+        </script>
+    </body>
+</html>
