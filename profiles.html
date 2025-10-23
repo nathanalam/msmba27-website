@@ -1,194 +1,515 @@
 <!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Class Profiles — HBS MS/MBA ES 2027</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <script src="https://unpkg.com/lucide@latest"></script>
+        <style>
+            body {
+                font-family: "Inter", sans-serif;
+            }
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Class Profiles — HBS MS/MBA ES 2027</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        body {
-            font-family: "Inter", sans-serif;
-        }
+            .bg-crimson {
+                background-color: #a51c30;
+            }
 
-        .bg-crimson {
-            background-color: #a51c30;
-        }
+            .text-crimson {
+                color: #a51c30;
+            }
 
-        .text-crimson {
-            color: #a51c30;
-        }
+            .hover-bg-crimson-dark:hover {
+                background-color: #841626;
+            }
 
-        .hover-bg-crimson-dark:hover {
-            background-color: #841626;
-        }
+            [x-cloak] {
+                display: none !important;
+            }
+        </style>
+    </head>
 
-        [x-cloak] {
-            display: none !important;
-        }
-    </style>
-</head>
-
-<body class="bg-gray-50 text-gray-800">
-    <!-- Header & Navigation -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-4">
-                <svg class="h-10 w-10 text-crimson" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M12 2L2 7V9H3V17H21V9H22V7L12 2ZM19 15H17V11H15V15H13V9H14.4L12 7.5L9.6 9H11V15H9V11H7V15H5V8.6L12 4.4L19 8.6V15Z"
-                        fill="currentColor" />
-                    <path d="M7 17H17V19H7V17Z" fill="currentColor" />
-                </svg>
-                <h1 class="text-xl md:text-2xl font-bold text-gray-800">
-                    <span class="hidden sm:inline">HBS</span> MS/MBA Eng.
-                    Sci. '27
-                </h1>
-            </div>
-            <div class="hidden md:flex items-center space-x-6">
-                <a href="index.html" class="text-gray-600 hover:text-crimson transition duration-300">Home</a>
-                <a href="profiles.html" class="text-gray-600 hover:text-crimson transition duration-300">Class
-                    Profiles</a>
-                <a href="store.html" class="text-gray-600 hover:text-crimson transition duration-300">Swag Store</a>
-            </div>
-            <div class="md:hidden" x-data="{ open: false }">
-                <button @click="open = !open" class="text-gray-600 focus:outline-none">
-                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16m-7 6h7"></path>
+    <body class="bg-gray-50 text-gray-800">
+        <!-- Header & Navigation -->
+        <header class="bg-white shadow-sm sticky top-0 z-50">
+            <nav
+                class="container mx-auto px-6 py-4 flex justify-between items-center"
+            >
+                <div class="flex items-center space-x-4">
+                    <svg
+                        class="h-10 w-10 text-crimson"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M12 2L2 7V9H3V17H21V9H22V7L12 2ZM19 15H17V11H15V15H13V9H14.4L12 7.5L9.6 9H11V15H9V11H7V15H5V8.6L12 4.4L19 8.6V15Z"
+                            fill="currentColor"
+                        />
+                        <path d="M7 17H17V19H7V17Z" fill="currentColor" />
                     </svg>
-                </button>
-                <div x-show="open" @click.away="open = false"
-                    class="absolute top-16 right-4 bg-white rounded-lg shadow-xl p-4 z-50">
-                    <a href="index.html" @click="open = false"
-                        class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md">Home</a>
-                    <a href="profiles.html" @click="open = false"
-                        class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md">Profiles</a>
-                    <a href="store.html" @click="open = false"
-                        class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md">Store</a>
+                    <h1 class="text-xl md:text-2xl font-bold text-gray-800">
+                        <span class="hidden sm:inline">HBS</span> MS/MBA Eng.
+                        Sci. '27
+                    </h1>
                 </div>
-            </div>
-        </nav>
-    </header>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a
+                        href="index.html"
+                        class="text-gray-600 hover:text-crimson transition duration-300"
+                        >Home</a
+                    >
+                    <a
+                        href="profiles.html"
+                        class="text-gray-600 hover:text-crimson transition duration-300"
+                        >Class Profiles</a
+                    >
+                    <a
+                        href="https://hbs-msmba-eng-2027.printful.me/"
+                        target="_blank"
+                        class="text-gray-600 hover:text-crimson transition duration-300"
+                        >Swag Store</a
+                    >
+                </div>
+                <div class="md:hidden" x-data="{ open: false }">
+                    <button
+                        @click="open = !open"
+                        class="text-gray-600 focus:outline-none"
+                    >
+                        <svg
+                            class="h-6 w-6"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M4 6h16M4 12h16m-7 6h7"
+                            ></path>
+                        </svg>
+                    </button>
+                    <div
+                        x-show="open"
+                        @click.away="open = false"
+                        class="absolute top-16 right-4 bg-white rounded-lg shadow-xl p-4 z-50"
+                    >
+                        <a
+                            href="index.html"
+                            @click="open = false"
+                            class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md"
+                            >Home</a
+                        >
+                        <a
+                            href="profiles.html"
+                            @click="open = false"
+                            class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md"
+                            >Profiles</a
+                        >
+                        <a
+                            href="https://hbs-msmba-eng-2027.printful.me/"
+                            @click="open = false"
+                            target="_blank"
+                            class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md"
+                            >Store</a
+                        >
+                    </div>
+                </div>
+            </nav>
+        </header>
 
-    <main x-data="profilesData()">
-        <!-- Class Profiles Section -->
-        <section class="py-20 bg-gray-50">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h3 class="text-4xl font-bold text-gray-900">
-                        Class of 2027 Profiles
-                    </h3>
-                    <p class="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
-                        Get to know the brilliant minds shaping the future
-                        of business and technology.
+        <main x-data="profilesData()">
+            <!-- Class Profiles Section -->
+            <section class="py-20 bg-gray-50">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-16">
+                        <h3 class="text-4xl font-bold text-gray-900">
+                            Class of 2027 Profiles
+                        </h3>
+                        <p class="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
+                            Get to know the brilliant minds shaping the future
+                            of business and technology.
+                        </p>
+                    </div>
+                    <div
+                        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
+                    >
+                        <template x-for="profile in profiles" :key="profile.id">
+                            <div
+                                class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 group"
+                            >
+                                <div class="relative">
+                                    <img
+                                        class="w-full h-64 object-cover"
+                                        :src="`https://d1lr79mezp778h.cloudfront.net/${encodeURIComponent(profile.name)}.jpg`"
+                                        :alt="profile.name"
+                                        @error="$event.target.src = `https://placehold.co/400x400/838383/FFFFFF?text=${encodeURIComponent(profile.name)}`"
+                                    />
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-70"
+                                    ></div>
+                                    <h4
+                                        class="absolute bottom-4 left-4 text-white text-2xl font-bold"
+                                        x-text="profile.name"
+                                    ></h4>
+                                </div>
+                                <div class="p-6">
+                                    <p
+                                        class="text-crimson font-semibold"
+                                        x-text="profile.undergrad"
+                                    ></p>
+                                    <p
+                                        class="mt-4 text-gray-600 text-sm"
+                                        x-text="profile.bio"
+                                    ></p>
+                                    <div class="mt-4 flex space-x-4">
+                                        <a
+                                            :href="profile.linkedin"
+                                            target="_blank"
+                                            class="text-gray-400 hover:text-blue-600 transition duration-300"
+                                        >
+                                            <i
+                                                data-lucide="linkedin"
+                                                class="w-5 h-5"
+                                            ></i>
+                                        </a>
+                                        <a
+                                            :href="'mailto:' + profile.email"
+                                            class="text-gray-400 hover:text-gray-800 transition duration-300"
+                                        >
+                                            <i
+                                                data-lucide="mail"
+                                                class="w-5 h-5"
+                                            ></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-white">
+            <div class="container mx-auto px-6 py-12">
+                <div
+                    class="flex flex-col md:flex-row justify-between items-center"
+                >
+                    <div class="text-center md:text-left mb-6 md:mb-0">
+                        <h5 class="text-xl font-bold">
+                            HBS MS/MBA Engineering Sciences
+                        </h5>
+                        <p class="text-gray-400">Class of 2027</p>
+                    </div>
+                    <div class="flex space-x-6">
+                        <a
+                            href="profiles.html"
+                            class="text-gray-400 hover:text-white transition duration-300"
+                            >Profiles</a
+                        >
+                        <a
+                            href="https://hbs-msmba-eng-2027.printful.me/"
+                            target="_blank"
+                            class="text-gray-400 hover:text-white transition duration-300"
+                            >Store</a
+                        >
+                        <a
+                            href="#"
+                            class="text-gray-400 hover:text-white transition duration-300"
+                            >Contact</a
+                        >
+                    </div>
+                </div>
+                <div
+                    class="mt-8 border-t border-gray-700 pt-6 text-center text-gray-500 text-sm"
+                >
+                    <p>
+                        &copy; 2025 Harvard Business School. All Rights
+                        Reserved. This is a conceptual project.
                     </p>
                 </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                    <template x-for="profile in profiles" :key="profile.id">
-                        <div
-                            class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 group">
-                            <div class="relative">
-                                <img class="w-full h-64 object-cover"
-                                    :src="`https://d1lr79mezp778h.cloudfront.net/${encodeURIComponent(profile.name)}.jpg`"
-                                    :alt="profile.name"
-                                    @error="$event.target.src = `https://placehold.co/400x400/838383/FFFFFF?text=${encodeURIComponent(profile.name)}`" />
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-70">
-                                </div>
-                                <h4 class="absolute bottom-4 left-4 text-white text-2xl font-bold"
-                                    x-text="profile.name"></h4>
-                            </div>
-                            <div class="p-6">
-                                <p class="text-crimson font-semibold" x-text="profile.undergrad"></p>
-                                <p class="mt-4 text-gray-600 text-sm" x-text="profile.bio"></p>
-                                <div class="mt-4 flex space-x-4">
-                                    <a :href="profile.linkedin" target="_blank"
-                                        class="text-gray-400 hover:text-blue-600 transition duration-300">
-                                        <i data-lucide="linkedin" class="w-5 h-5"></i>
-                                    </a>
-                                    <a :href="'mailto:' + profile.email"
-                                        class="text-gray-400 hover:text-gray-800 transition duration-300">
-                                        <i data-lucide="mail" class="w-5 h-5"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </template>
-                </div>
             </div>
-        </section>
-    </main>
+        </footer>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white">
-        <div class="container mx-auto px-6 py-12">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="text-center md:text-left mb-6 md:mb-0">
-                    <h5 class="text-xl font-bold">
-                        HBS MS/MBA Engineering Sciences
-                    </h5>
-                    <p class="text-gray-400">Class of 2027</p>
-                </div>
-                <div class="flex space-x-6">
-                    <a href="profiles.html" class="text-gray-400 hover:text-white transition duration-300">Profiles</a>
-                    <a href="store.html" class="text-gray-400 hover:text-white transition duration-300">Store</a>
-                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">Contact</a>
-                </div>
-            </div>
-            <div class="mt-8 border-t border-gray-700 pt-6 text-center text-gray-500 text-sm">
-                <p>
-                    &copy; 2025 Harvard Business School. All Rights
-                    Reserved. This is a conceptual project.
-                </p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            lucide.createIcons();
-        });
-        function profilesData() {
-            return {
-                profiles: [
-                    { id: 1, name: "Adam Czyzewski", undergrad: "MS/MBA", bio: "MS/MBA 2027 student", image: "https://placehold.co/400x400/313131/FFFFFF?text=AC", linkedin: "https://www.linkedin.com/in/czyzewski-a/", email: "aczyzewski@mba2027.hbs.edu" },
-                    { id: 2, name: "Peter Wilson", undergrad: "MS/MBA", bio: "MS/MBA 2027 student", image: "https://placehold.co/400x400/545454/FFFFFF?text=PW", linkedin: "https://www.linkedin.com/in/peter-wilson-harvard/", email: "pwilson@mba2027.hbs.edu" },
-                    { id: 3, name: "Connor Elkin", undergrad: "MS/MBA", bio: "MS/MBA 2027 student", image: "https://placehold.co/400x400/838383/FFFFFF?text=CE", linkedin: "https://www.linkedin.com/in/connorelkin", email: "celkin@mba2027.hbs.edu" },
-                    { id: 4, name: "Divya Nekkanti", undergrad: "MS/MBA", bio: "MS/MBA 2027 student", image: "https://placehold.co/400x400/A3A3A3/FFFFFF?text=DN", linkedin: "https://www.linkedin.com/in/divya-nekkanti/", email: "dnekkanti@mba2027.hbs.edu" },
-                    { id: 5, name: "Ed Gerrard", undergrad: "MS/MBA", bio: "MS/MBA 2027 student", image: "https://placehold.co/400x400/313131/FFFFFF?text=EG", linkedin: "https://www.linkedin.com/in/edward-gerrard/", email: "egerrard@mba2027.hbs.edu" },
-                    { id: 6, name: "Skyler Liu", undergrad: "MS/MBA", bio: "MS/MBA 2027 student", image: "https://placehold.co/400x400/545454/FFFFFF?text=SL", linkedin: "www.linkedin.com/in/skylerliu", email: "skliu@mba2027.hbs.edu" },
-                    { id: 7, name: "Shiham Alam", undergrad: "MS/MBA", bio: "MS/MBA 2027 student", image: "https://placehold.co/400x400/838383/FFFFFF?text=NA", linkedin: "https://www.linkedin.com/in/nathan-alam/", email: "slam@mba2027.hbs.edu" },
-                    { id: 8, name: "Manasi Maheshwari", undergrad: "MS/MBA", bio: "MS/MBA 2027 student", image: "https://placehold.co/400x400/A3A3A3/FFFFFF?text=MM", linkedin: "https://linkedin.com/in/manasimaheshwari", email: "mmaheshwari@mba2027.hbs.edu" },
-                    { id: 9, name: "Chloe Nelson-Arzuaga", undergrad: "MS/MBA", bio: "MS/MBA 2027 student", image: "https://placehold.co/400x400/313131/FFFFFF?text=CN", linkedin: "https://www.linkedin.com/in/chloe-nelson-arzuaga-01a50a16b/", email: "cnelsonarzuaga@mba2027.hbs.edu" },
-                    { id: 10, name: "Michael Brown", undergrad: "MS/MBA", bio: "MS/MBA 2027 student", image: "https://placehold.co/400x400/545454/FFFFFF?text=MB", linkedin: "https://www.linkedin.com/in/michael-brown-b501a6145/", email: "mibrown@mba2027.hbs.edu" },
-                    { id: 11, name: "Abhi Gunasekar", undergrad: "MS/MBA", bio: "MS/MBA 2027 student", image: "https://placehold.co/400x400/838383/FFFFFF?text=AG", linkedin: "https://www.linkedin.com/in/abhi-guna/", email: "agunasekar@mba2027.hbs.edu" },
-                    { id: 12, name: "Jolie Lerner", undergrad: "MS/MBA", bio: "MS/MBA 2027 student", image: "https://placehold.co/400x400/A3A3A3/FFFFFF?text=JL", linkedin: "https://www.linkedin.com/in/jolielerner888/", email: "jlerner@mba2027.hbs.edu" },
-                    { id: 13, name: "Trevor O'Leary", undergrad: "MS/MBA", bio: "MS/MBA 2027 student", image: "https://placehold.co/400x400/313131/FFFFFF?text=TO", linkedin: "https://www.linkedin.com/in/trevor-oleary/", email: "toleary@mba2027.hbs.edu" },
-                    { id: 14, name: "Sreya Chagarlamudi", undergrad: "MS/MBA", bio: "MS/MBA 2027 student", image: "https://placehold.co/400x400/545454/FFFFFF?text=SC", linkedin: "https://www.linkedin.com/in/sreyach/", email: "schagarlamudi@mba2027.hbs.edu" },
-                    { id: 15, name: "Kanishk Tantia", undergrad: "MS/MBA", bio: "MS/MBA 2027 student", image: "https://placehold.co/400x400/838383/FFFFFF?text=KT", linkedin: "(33) Kanishk Tantia | LinkedIn", email: "ktantia@mba2027.hbs.edu" },
-                    { id: 17, name: "Daniel Schwartz", undergrad: "MS/MBA", bio: "MS/MBA 2027 student", image: "https://placehold.co/400x400/313131/FFFFFF?text=DS", linkedin: "https://www.linkedin.com/in/danielschwartz3/", email: "dschwartz@mba2027.hbs.edu" },
-                    { id: 18, name: "Georgia Messinger", undergrad: "MS/MBA", bio: "MS/MBA 2027 student", image: "https://placehold.co/400x400/545454/FFFFFF?text=GM", linkedin: "https://www.linkedin.com/in/georgia-messinger/", email: "gmessinger@mba2027.hbs.edu" },
-                    { id: 19, name: "Noa Schwartz", undergrad: "MS/MBA", bio: "MS/MBA 2027 student", image: "https://placehold.co/400x400/838383/FFFFFF?text=NS", linkedin: "https://www.linkedin.com/in/noa-schwartz-32aa98166/", email: "nschwartz@mba2027.hbs.edu" },
-                    { id: 20, name: "Tyler Mangini", undergrad: "MS/MBA", bio: "MS/MBA 2027 student", image: "https://placehold.co/400x400/A3A3A3/FFFFFF?text=TM", linkedin: "https://www.linkedin.com/in/tyler-mangini/", email: "tmangini@mba2027.hbs.edu" },
-                    { id: 21, name: "Dixun Cui", undergrad: "MS/MBA", bio: "MS/MBA 2027 student", image: "https://placehold.co/400x400/313131/FFFFFF?text=DC", linkedin: "https://www.linkedin.com/in/dixun-cui/", email: "dcui@mba2027.hbs.edu" },
-                    { id: 22, name: "Harshvardhan Sanghi", undergrad: "MS/MBA", bio: "MS/MBA 2027 student", image: "https://placehold.co/400x400/545454/FFFFFF?text=HS", linkedin: "https://www.linkedin.com/in/harshvardhan-sanghi/", email: "hsanghi@mba2027.hbs.edu" },
-                    { id: 23, name: "Vittorio Bottoli", undergrad: "MS/MBA", bio: "MS/MBA 2027 student", image: "https://placehold.co/400x400/838383/FFFFFF?text=VB", linkedin: "https://www.linkedin.com/in/vittorio-bottoli-4938b213a/", email: "vbottoli@mba2027.hbs.edu" },
-                    { id: 24, name: "Arshaan Ali", undergrad: "MS/MBA", bio: "MS/MBA 2027 student", image: "https://placehold.co/400x400/A3A3A3/FFFFFF?text=AA", linkedin: "https://www.linkedin.com/in/arshaan-ali/", email: "aali@mba2027.hbs.edu" },
-                    { id: 25, name: "Nicolas Ng", undergrad: "MS/MBA", bio: "MS/MBA 2027 student", image: "https://placehold.co/400x400/313131/FFFFFF?text=NN", linkedin: "https://www.linkedin.com/in/nicolas-o-ng/", email: "nng@mba2027.hbs.edu" },
-                    { id: 26, name: "Tomisin Fasawe", undergrad: "MS/MBA", bio: "MS/MBA 2027 student", image: "https://placehold.co/400x400/545454/FFFFFF?text=TF", linkedin: "https://www.linkedin.com/in/tomisinfasawe/", email: "tfasawe@mba2027.hbs.edu" },
-                    { id: 27, name: "Shachar Cohen", undergrad: "MS/MBA", bio: "MS/MBA 2027 student", image: "https://placehold.co/400x400/838383/FFFFFF?text=SC", linkedin: "www.linkedin.com/in/shacharcohen", email: "scohen@mba2027.hbs.edu" },
-                ],
-            };
-        }
-    </script>
-</body>
-
+        <script
+            src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+            defer
+        ></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                lucide.createIcons();
+            });
+            function profilesData() {
+                return {
+                    profiles: [
+                        {
+                            id: 1,
+                            name: "Adam Czyzewski",
+                            undergrad: "MS/MBA",
+                            bio: "MS/MBA 2027 student",
+                            image: "https://placehold.co/400x400/313131/FFFFFF?text=AC",
+                            linkedin:
+                                "https://www.linkedin.com/in/czyzewski-a/",
+                            email: "aczyzewski@mba2027.hbs.edu",
+                        },
+                        {
+                            id: 2,
+                            name: "Peter Wilson",
+                            undergrad: "MS/MBA",
+                            bio: "MS/MBA 2027 student",
+                            image: "https://placehold.co/400x400/545454/FFFFFF?text=PW",
+                            linkedin:
+                                "https://www.linkedin.com/in/peter-wilson-harvard/",
+                            email: "pwilson@mba2027.hbs.edu",
+                        },
+                        {
+                            id: 3,
+                            name: "Connor Elkin",
+                            undergrad: "MS/MBA",
+                            bio: "MS/MBA 2027 student",
+                            image: "https://placehold.co/400x400/838383/FFFFFF?text=CE",
+                            linkedin: "https://www.linkedin.com/in/connorelkin",
+                            email: "celkin@mba2027.hbs.edu",
+                        },
+                        {
+                            id: 4,
+                            name: "Divya Nekkanti",
+                            undergrad: "MS/MBA",
+                            bio: "MS/MBA 2027 student",
+                            image: "https://placehold.co/400x400/A3A3A3/FFFFFF?text=DN",
+                            linkedin:
+                                "https://www.linkedin.com/in/divya-nekkanti/",
+                            email: "dnekkanti@mba2027.hbs.edu",
+                        },
+                        {
+                            id: 5,
+                            name: "Ed Gerrard",
+                            undergrad: "MS/MBA",
+                            bio: "MS/MBA 2027 student",
+                            image: "https://placehold.co/400x400/313131/FFFFFF?text=EG",
+                            linkedin:
+                                "https://www.linkedin.com/in/edward-gerrard/",
+                            email: "egerrard@mba2027.hbs.edu",
+                        },
+                        {
+                            id: 6,
+                            name: "Skyler Liu",
+                            undergrad: "MS/MBA",
+                            bio: "MS/MBA 2027 student",
+                            image: "https://placehold.co/400x400/545454/FFFFFF?text=SL",
+                            linkedin: "www.linkedin.com/in/skylerliu",
+                            email: "skliu@mba2027.hbs.edu",
+                        },
+                        {
+                            id: 7,
+                            name: "Shiham Alam",
+                            undergrad: "MS/MBA",
+                            bio: "MS/MBA 2027 student",
+                            image: "https://placehold.co/400x400/838383/FFFFFF?text=NA",
+                            linkedin:
+                                "https://www.linkedin.com/in/nathan-alam/",
+                            email: "slam@mba2027.hbs.edu",
+                        },
+                        {
+                            id: 8,
+                            name: "Manasi Maheshwari",
+                            undergrad: "MS/MBA",
+                            bio: "MS/MBA 2027 student",
+                            image: "https://placehold.co/400x400/A3A3A3/FFFFFF?text=MM",
+                            linkedin:
+                                "https://linkedin.com/in/manasimaheshwari",
+                            email: "mmaheshwari@mba2027.hbs.edu",
+                        },
+                        {
+                            id: 9,
+                            name: "Chloe Nelson-Arzuaga",
+                            undergrad: "MS/MBA",
+                            bio: "MS/MBA 2027 student",
+                            image: "https://placehold.co/400x400/313131/FFFFFF?text=CN",
+                            linkedin:
+                                "https://www.linkedin.com/in/chloe-nelson-arzuaga-01a50a16b/",
+                            email: "cnelsonarzuaga@mba2027.hbs.edu",
+                        },
+                        {
+                            id: 10,
+                            name: "Michael Brown",
+                            undergrad: "MS/MBA",
+                            bio: "MS/MBA 2027 student",
+                            image: "https://placehold.co/400x400/545454/FFFFFF?text=MB",
+                            linkedin:
+                                "https://www.linkedin.com/in/michael-brown-b501a6145/",
+                            email: "mibrown@mba2027.hbs.edu",
+                        },
+                        {
+                            id: 11,
+                            name: "Abhi Gunasekar",
+                            undergrad: "MS/MBA",
+                            bio: "MS/MBA 2027 student",
+                            image: "https://placehold.co/400x400/838383/FFFFFF?text=AG",
+                            linkedin: "https://www.linkedin.com/in/abhi-guna/",
+                            email: "agunasekar@mba2027.hbs.edu",
+                        },
+                        {
+                            id: 12,
+                            name: "Jolie Lerner",
+                            undergrad: "MS/MBA",
+                            bio: "MS/MBA 2027 student",
+                            image: "https://placehold.co/400x400/A3A3A3/FFFFFF?text=JL",
+                            linkedin:
+                                "https://www.linkedin.com/in/jolielerner888/",
+                            email: "jlerner@mba2027.hbs.edu",
+                        },
+                        {
+                            id: 13,
+                            name: "Trevor O'Leary",
+                            undergrad: "MS/MBA",
+                            bio: "MS/MBA 2027 student",
+                            image: "https://placehold.co/400x400/313131/FFFFFF?text=TO",
+                            linkedin:
+                                "https://www.linkedin.com/in/trevor-oleary/",
+                            email: "toleary@mba2027.hbs.edu",
+                        },
+                        {
+                            id: 14,
+                            name: "Sreya Chagarlamudi",
+                            undergrad: "MS/MBA",
+                            bio: "MS/MBA 2027 student",
+                            image: "https://placehold.co/400x400/545454/FFFFFF?text=SC",
+                            linkedin: "https://www.linkedin.com/in/sreyach/",
+                            email: "schagarlamudi@mba2027.hbs.edu",
+                        },
+                        {
+                            id: 15,
+                            name: "Kanishk Tantia",
+                            undergrad: "MS/MBA",
+                            bio: "MS/MBA 2027 student",
+                            image: "https://placehold.co/400x400/838383/FFFFFF?text=KT",
+                            linkedin: "(33) Kanishk Tantia | LinkedIn",
+                            email: "ktantia@mba2027.hbs.edu",
+                        },
+                        {
+                            id: 17,
+                            name: "Daniel Schwartz",
+                            undergrad: "MS/MBA",
+                            bio: "MS/MBA 2027 student",
+                            image: "https://placehold.co/400x400/313131/FFFFFF?text=DS",
+                            linkedin:
+                                "https://www.linkedin.com/in/danielschwartz3/",
+                            email: "dschwartz@mba2027.hbs.edu",
+                        },
+                        {
+                            id: 18,
+                            name: "Georgia Messinger",
+                            undergrad: "MS/MBA",
+                            bio: "MS/MBA 2027 student",
+                            image: "https://placehold.co/400x400/545454/FFFFFF?text=GM",
+                            linkedin:
+                                "https://www.linkedin.com/in/georgia-messinger/",
+                            email: "gmessinger@mba2027.hbs.edu",
+                        },
+                        {
+                            id: 19,
+                            name: "Noa Schwartz",
+                            undergrad: "MS/MBA",
+                            bio: "MS/MBA 2027 student",
+                            image: "https://placehold.co/400x400/838383/FFFFFF?text=NS",
+                            linkedin:
+                                "https://www.linkedin.com/in/noa-schwartz-32aa98166/",
+                            email: "nschwartz@mba2027.hbs.edu",
+                        },
+                        {
+                            id: 20,
+                            name: "Tyler Mangini",
+                            undergrad: "MS/MBA",
+                            bio: "MS/MBA 2027 student",
+                            image: "https://placehold.co/400x400/A3A3A3/FFFFFF?text=TM",
+                            linkedin:
+                                "https://www.linkedin.com/in/tyler-mangini/",
+                            email: "tmangini@mba2027.hbs.edu",
+                        },
+                        {
+                            id: 21,
+                            name: "Dixun Cui",
+                            undergrad: "MS/MBA",
+                            bio: "MS/MBA 2027 student",
+                            image: "https://placehold.co/400x400/313131/FFFFFF?text=DC",
+                            linkedin: "https://www.linkedin.com/in/dixun-cui/",
+                            email: "dcui@mba2027.hbs.edu",
+                        },
+                        {
+                            id: 22,
+                            name: "Harshvardhan Sanghi",
+                            undergrad: "MS/MBA",
+                            bio: "MS/MBA 2027 student",
+                            image: "https://placehold.co/400x400/545454/FFFFFF?text=HS",
+                            linkedin:
+                                "https://www.linkedin.com/in/harshvardhan-sanghi/",
+                            email: "hsanghi@mba2027.hbs.edu",
+                        },
+                        {
+                            id: 23,
+                            name: "Vittorio Bottoli",
+                            undergrad: "MS/MBA",
+                            bio: "MS/MBA 2027 student",
+                            image: "https://placehold.co/400x400/838383/FFFFFF?text=VB",
+                            linkedin:
+                                "https://www.linkedin.com/in/vittorio-bottoli-4938b213a/",
+                            email: "vbottoli@mba2027.hbs.edu",
+                        },
+                        {
+                            id: 24,
+                            name: "Arshaan Ali",
+                            undergrad: "MS/MBA",
+                            bio: "MS/MBA 2027 student",
+                            image: "https://placehold.co/400x400/A3A3A3/FFFFFF?text=AA",
+                            linkedin:
+                                "https://www.linkedin.com/in/arshaan-ali/",
+                            email: "aali@mba2027.hbs.edu",
+                        },
+                        {
+                            id: 25,
+                            name: "Nicolas Ng",
+                            undergrad: "MS/MBA",
+                            bio: "MS/MBA 2027 student",
+                            image: "https://placehold.co/400x400/313131/FFFFFF?text=NN",
+                            linkedin:
+                                "https://www.linkedin.com/in/nicolas-o-ng/",
+                            email: "nng@mba2027.hbs.edu",
+                        },
+                        {
+                            id: 26,
+                            name: "Tomisin Fasawe",
+                            undergrad: "MS/MBA",
+                            bio: "MS/MBA 2027 student",
+                            image: "https://placehold.co/400x400/545454/FFFFFF?text=TF",
+                            linkedin:
+                                "https://www.linkedin.com/in/tomisinfasawe/",
+                            email: "tfasawe@mba2027.hbs.edu",
+                        },
+                        {
+                            id: 27,
+                            name: "Shachar Cohen",
+                            undergrad: "MS/MBA",
+                            bio: "MS/MBA 2027 student",
+                            image: "https://placehold.co/400x400/838383/FFFFFF?text=SC",
+                            linkedin: "www.linkedin.com/in/shacharcohen",
+                            email: "scohen@mba2027.hbs.edu",
+                        },
+                    ],
+                };
+            }
+        </script>
+    </body>
 </html>

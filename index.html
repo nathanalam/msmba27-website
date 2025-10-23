@@ -1,157 +1,235 @@
 <!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>HBS MS/MBA Engineering Sciences Class of 2027</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <script src="https://unpkg.com/lucide@latest"></script>
+        <style>
+            body {
+                font-family: "Inter", sans-serif;
+            }
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HBS MS/MBA Engineering Sciences Class of 2027</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        body {
-            font-family: "Inter", sans-serif;
-        }
+            .bg-crimson {
+                background-color: #a51c30;
+            }
 
-        .bg-crimson {
-            background-color: #a51c30;
-        }
+            .text-crimson {
+                color: #a51c30;
+            }
 
-        .text-crimson {
-            color: #a51c30;
-        }
+            .border-crimson {
+                border-color: #a51c30;
+            }
 
-        .border-crimson {
-            border-color: #a51c30;
-        }
+            .hover-bg-crimson-dark:hover {
+                background-color: #841626;
+            }
 
-        .hover-bg-crimson-dark:hover {
-            background-color: #841626;
-        }
+            .group:hover .group-hover\:text-crimson {
+                color: #a51c30;
+            }
 
-        .group:hover .group-hover\:text-crimson {
-            color: #a51c30;
-        }
+            .group:hover .group-hover\:translate-x-1 {
+                transform: translateX(0.25rem);
+            }
 
-        .group:hover .group-hover\:translate-x-1 {
-            transform: translateX(0.25rem);
-        }
+            [x-cloak] {
+                display: none !important;
+            }
+        </style>
+    </head>
 
-        [x-cloak] {
-            display: none !important;
-        }
-    </style>
-</head>
-
-<body class="bg-gray-50 text-gray-800">
-    <!-- Header & Navigation -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-4">
-                <svg class="h-10 w-10 text-crimson" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M12 2L2 7V9H3V17H21V9H22V7L12 2ZM19 15H17V11H15V15H13V9H14.4L12 7.5L9.6 9H11V15H9V11H7V15H5V8.6L12 4.4L19 8.6V15Z"
-                        fill="currentColor" />
-                    <path d="M7 17H17V19H7V17Z" fill="currentColor" />
-                </svg>
-                <h1 class="text-xl md:text-2xl font-bold text-gray-800">
-                    <span class="hidden sm:inline">HBS</span> MS/MBA Eng.
-                    Sci. '27
-                </h1>
-            </div>
-            <div class="hidden md:flex items-center space-x-6">
-                <a href="index.html" class="text-gray-600 hover:text-crimson transition duration-300">Home</a>
-                <a href="profiles.html" class="text-gray-600 hover:text-crimson transition duration-300">Class
-                    Profiles</a>
-                <a href="store.html" class="text-gray-600 hover:text-crimson transition duration-300">Swag Store</a>
-            </div>
-            <div class="md:hidden" x-data="{ open: false }">
-                <button @click="open = !open" class="text-gray-600 focus:outline-none">
-                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16m-7 6h7"></path>
+    <body class="bg-gray-50 text-gray-800">
+        <!-- Header & Navigation -->
+        <header class="bg-white shadow-sm sticky top-0 z-50">
+            <nav
+                class="container mx-auto px-6 py-4 flex justify-between items-center"
+            >
+                <div class="flex items-center space-x-4">
+                    <svg
+                        class="h-10 w-10 text-crimson"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M12 2L2 7V9H3V17H21V9H22V7L12 2ZM19 15H17V11H15V15H13V9H14.4L12 7.5L9.6 9H11V15H9V11H7V15H5V8.6L12 4.4L19 8.6V15Z"
+                            fill="currentColor"
+                        />
+                        <path d="M7 17H17V19H7V17Z" fill="currentColor" />
                     </svg>
-                </button>
-                <div x-show="open" @click.away="open = false"
-                    class="absolute top-16 right-4 bg-white rounded-lg shadow-xl p-4 z-50">
-                    <a href="index.html" @click="open = false"
-                        class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md">Home</a>
-                    <a href="profiles.html" @click="open = false"
-                        class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md">Profiles</a>
-                    <a href="store.html" @click="open = false"
-                        class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md">Store</a>
+                    <h1 class="text-xl md:text-2xl font-bold text-gray-800">
+                        <span class="hidden sm:inline">HBS</span> MS/MBA Eng.
+                        Sci. '27
+                    </h1>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a
+                        href="index.html"
+                        class="text-gray-600 hover:text-crimson transition duration-300"
+                        >Home</a
+                    >
+                    <a
+                        href="profiles.html"
+                        class="text-gray-600 hover:text-crimson transition duration-300"
+                        >Class Profiles</a
+                    >
+                    <a
+                        href="https://hbs-msmba-eng-2027.printful.me/"
+                        target="_blank"
+                        class="text-gray-600 hover:text-crimson transition duration-300"
+                        >Swag Store</a
+                    >
+                </div>
+                <div class="md:hidden" x-data="{ open: false }">
+                    <button
+                        @click="open = !open"
+                        class="text-gray-600 focus:outline-none"
+                    >
+                        <svg
+                            class="h-6 w-6"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M4 6h16M4 12h16m-7 6h7"
+                            ></path>
+                        </svg>
+                    </button>
+                    <div
+                        x-show="open"
+                        @click.away="open = false"
+                        class="absolute top-16 right-4 bg-white rounded-lg shadow-xl p-4 z-50"
+                    >
+                        <a
+                            href="index.html"
+                            @click="open = false"
+                            class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md"
+                            >Home</a
+                        >
+                        <a
+                            href="profiles.html"
+                            @click="open = false"
+                            class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md"
+                            >Profiles</a
+                        >
+                        <a
+                            href="https://hbs-msmba-eng-2027.printful.me/"
+                            @click="open = false"
+                            target="_blank"
+                            class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md"
+                            >Store</a
+                        >
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Hero Section -->
+            <section id="home" class="relative bg-white">
+                <div class="absolute inset-0">
+                    <img
+                        class="w-full h-full object-cover opacity-10"
+                        src="https://images.unsplash.com/photo-1579546929518-9e396f3cc809?q=80&w=2070&auto=format&fit=crop"
+                        alt="Abstract Background"
+                    />
+                </div>
+                <div
+                    class="relative container mx-auto px-6 py-24 md:py-32 text-center"
+                >
+                    <h2
+                        class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight"
+                    >
+                        Harvard Business School
+                    </h2>
+                    <p
+                        class="mt-4 text-2xl md:text-3xl font-semibold text-crimson"
+                    >
+                        MS/MBA in Engineering Sciences — Class of 2027
+                    </p>
+                    <p class="mt-6 max-w-3xl mx-auto text-lg text-gray-600">
+                        Welcome to the digital hub for the inaugural class of
+                        innovators, leaders, and builders. Explore our profiles
+                        and grab some exclusive class swag.
+                    </p>
+                    <div class="mt-10">
+                        <a
+                            href="profiles.html"
+                            class="bg-crimson text-white font-bold py-3 px-8 rounded-lg shadow-lg hover-bg-crimson-dark transition duration-300 ease-in-out transform hover:scale-105"
+                        >
+                            Meet the Class
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-white">
+            <div class="container mx-auto px-6 py-12">
+                <div
+                    class="flex flex-col md:flex-row justify-between items-center"
+                >
+                    <div class="text-center md:text-left mb-6 md:mb-0">
+                        <h5 class="text-xl font-bold">
+                            HBS MS/MBA Engineering Sciences
+                        </h5>
+                        <p class="text-gray-400">Class of 2027</p>
+                    </div>
+                    <div class="flex space-x-6">
+                        <a
+                            href="profiles.html"
+                            class="text-gray-400 hover:text-white transition duration-300"
+                            >Profiles</a
+                        >
+                        <a
+                            href="https://hbs-msmba-eng-2027.printful.me/"
+                            target="_blank"
+                            class="text-gray-400 hover:text-white transition duration-300"
+                            >Store</a
+                        >
+                        <a
+                            href="#"
+                            class="text-gray-400 hover:text-white transition duration-300"
+                            >Contact</a
+                        >
+                    </div>
+                </div>
+                <div
+                    class="mt-8 border-t border-gray-700 pt-6 text-center text-gray-500 text-sm"
+                >
+                    <p>
+                        &copy; 2025 Harvard Business School. All Rights
+                        Reserved. This is a conceptual project.
+                    </p>
                 </div>
             </div>
-        </nav>
-    </header>
+        </footer>
 
-    <main>
-        <!-- Hero Section -->
-        <section id="home" class="relative bg-white">
-            <div class="absolute inset-0">
-                <img class="w-full h-full object-cover opacity-10"
-                    src="https://images.unsplash.com/photo-1579546929518-9e396f3cc809?q=80&w=2070&auto=format&fit=crop"
-                    alt="Abstract Background" />
-            </div>
-            <div class="relative container mx-auto px-6 py-24 md:py-32 text-center">
-                <h2 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">
-                    Harvard Business School
-                </h2>
-                <p class="mt-4 text-2xl md:text-3xl font-semibold text-crimson">
-                    MS/MBA in Engineering Sciences — Class of 2027
-                </p>
-                <p class="mt-6 max-w-3xl mx-auto text-lg text-gray-600">
-                    Welcome to the digital hub for the inaugural class of
-                    innovators, leaders, and builders. Explore our profiles
-                    and grab some exclusive class swag.
-                </p>
-                <div class="mt-10">
-                    <a href="profiles.html"
-                        class="bg-crimson text-white font-bold py-3 px-8 rounded-lg shadow-lg hover-bg-crimson-dark transition duration-300 ease-in-out transform hover:scale-105">
-                        Meet the Class
-                    </a>
-                </div>
-            </div>
-        </section>
-
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white">
-        <div class="container mx-auto px-6 py-12">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="text-center md:text-left mb-6 md:mb-0">
-                    <h5 class="text-xl font-bold">
-                        HBS MS/MBA Engineering Sciences
-                    </h5>
-                    <p class="text-gray-400">Class of 2027</p>
-                </div>
-                <div class="flex space-x-6">
-                    <a href="profiles.html" class="text-gray-400 hover:text-white transition duration-300">Profiles</a>
-                    <a href="store.html" class="text-gray-400 hover:text-white transition duration-300">Store</a>
-                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">Contact</a>
-                </div>
-            </div>
-            <div class="mt-8 border-t border-gray-700 pt-6 text-center text-gray-500 text-sm">
-                <p>
-                    &copy; 2025 Harvard Business School. All Rights
-                    Reserved. This is a conceptual project.
-                </p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            lucide.createIcons();
-        });
-    </script>
-</body>
-
+        <script
+            src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+            defer
+        ></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                lucide.createIcons();
+            });
+        </script>
+    </body>
 </html>
